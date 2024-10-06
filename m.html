@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planet and Asteroid Details in Zigzag Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+     
+      color: white;
+      padding: 0;
+    }
+
+    /* Planet container for 3D model, full width */
+    #planet-3d-container {
+      width: 100%;
+      height: 500px;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Main container for planet details and asteroid details */
+    #content-container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Planet detail section with image and text */
+    .planet-detail-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .planet-image {
+      width: 40%;
+      border-radius: 10px;
+    }
+
+    .planet-info {
+      width: 55%;
+      color: black;
+      padding: 20px;
+      
+      border-radius: 10px;
+    }
+
+    /* Styling for asteroid sections in zigzag layout */
+    .asteroid-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .asteroid-section.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .asteroid-image {
+      width: 40%;
+      border-radius: 10px;
+    }
+
+    .asteroid-info {
+      width: 55%;
+      color: black;
+      padding: 20px;
+      background-color: #f4f4f4;
+      border-radius: 10px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+    <div id="planet-3d-container"></div>
+
+    <!-- Content container for planet and asteroid details -->
+    <div id="content-container"></div>
+
+  <!-- Three.js for planet rendering -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+  
+const url = 'http://localhost:500/api/solar-system';
+
+
+fetch(url)
+    .then(response => {
+      // Check if the response is OK (status code 200-299)
+      if (!response.ok) {
+        throw new Error("HTTP error! Status: " + response.status);
+      }
+      return response.json(); // Parse the JSON from the response
+    })
+    .then(data => {
+      // Populate the DOM with data
+      const contentContainer = document.getElementById('content-container');
+
+      // Filter for only Mercury in the planet data
+      const mercuryData = data.solarSystem.planets.filter(planet => planet.name.toLowerCase() === 'mercury')[0];
+
+      if (mercuryData) {
+        const planetSection = document.createElement('div');
+        planetSection.className = 'planet-detail-section';
+
+        planetSection.innerHTML = `
+          <img src="${mercuryData.image}" alt="${mercuryData.name}" class="planet-image">
+          <div class="planet-info">
+            <h2>Planet Details</h2>
+            <p><strong>Planet Name:</strong> ${mercuryData.name}</p>
+            <p><strong>Diameter:</strong> ${mercuryData.diameter}</p>
+            <p><strong>Orbital Speed:</strong> ${mercuryData.orbitalPeriod}</p>
+            <p><strong>Moons:</strong> ${mercuryData.moons}</p>
+          </div>
+        `;
+        contentContainer.appendChild(planetSection);
+      }
+
+      // If you also want to populate specific asteroid details, add similar filtering logic here
+      // For example, limiting to the first asteroid if desired.
+      const asteroid = data.solarSystem.asteroids[0]; // Example of the first asteroid
+
+      if (asteroid) {
+        const asteroidSection = document.createElement('div');
+        asteroidSection.className = 'asteroid-section';
+
+        asteroidSection.innerHTML = `
+          <img src="${asteroid.image}" alt="${asteroid.name}" class="asteroid-image">
+          <div class="asteroid-info">
+            <h2>Asteroid Details</h2>
+            <p><strong>Name:</strong> ${asteroid.name}</p>
+            <p><strong>Distance from Earth:</strong> ${asteroid.distance_from_earth}</p>
+            <p><strong>Size:</strong> ${asteroid.size}</p>
+            <p><strong>Speed:</strong> ${asteroid.speed}</p>
+          </div>
+        `;
+        contentContainer.appendChild(asteroidSection);
+      }else{
+        
+        const asteroidSection = document.createElement('div');
+        asteroidSection.className = 'asteroid-section';
+
+        asteroidSection.innerHTML = `
+         
+          <div class="asteroid-info">
+          
+          </div>
+        `;
+      }
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error.message);
+    });
+
+    function createPlanet() {
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 500, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer();
+      const container = document.getElementById('planet-3d-container');
+      renderer.setSize(window.innerWidth, 500);  // Full width and fixed height
+      container.appendChild(renderer.domElement);
+
+      // Create a sphere geometry (planet)
+      const geometry = new THREE.SphereGeometry(2, 32, 32);
+      const texture = new THREE.TextureLoader().load('./images/earth.jpg'); // Example Earth texture
+      const material = new THREE.MeshBasicMaterial({ map: texture });
+      const planet = new THREE.Mesh(geometry, material);
+      scene.add(planet);
+
+      camera.position.z = 5;
+
+      // Animate and rotate the planet
+      function animate() {
+        requestAnimationFrame(animate);
+        planet.rotation.y += 0.01;
+        renderer.render(scene, camera);
+      }
+      animate();
+    }
+
+    // Initialize the 3D planet rendering
+    createPlanet();
+  </script>
+<script src="server.js"></script>
+</body>
+</html>
+

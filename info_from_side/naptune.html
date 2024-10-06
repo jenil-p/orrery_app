@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neptune Information</title>
+    <link rel="stylesheet" href="designbox.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <div class="background">
+        <div class="planet_hero">
+            <div class="planet_information">
+                <div class="planet-name">
+                    Neptune
+                </div>
+                <p>
+                    Neptune is the eighth planet from the Sun and is known for its deep blue color, which is caused by methane in its atmosphere. It is a gas giant with a diameter of about 30,600 miles (49,200 kilometers) and is famous for its strong winds, which can exceed 1,200 miles per hour (2,000 kilometers per hour). Neptune has 14 known moons, with Triton being the largest and most significant.
+                </p>
+                <p class="mission-heading">Some of the missions on Neptune are :</p>
+                <button class="button-for-mission">Voyager 2 (1989) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Voyager 2</b> is the only spacecraft to have visited Neptune, providing valuable data about its atmosphere, rings, and moons. <br></p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="planet_photo">
+                <img src="naptune.webp" alt="" class="photo">
+            </div> -->
+            <div class="planet_3D" data-planet="neptune"></div>
+        </div>
+        <div class="moon_hero">
+            <div class="moon_photo">
+                <img src="./images/triton.jpg" alt="" class="photo">
+            </div>
+            <!-- <div class="moon_3D" data-moon="triton"></div> -->
+            <div class="moon_information">
+                <div class="moon-name">
+                    Triton
+                </div>
+                <p>
+                    Triton is Neptune's largest moon and is unique for its retrograde orbit, suggesting it may have been captured by Neptune's gravity. It is one of the few geologically active moons in the solar system, featuring geysers that spew nitrogen gas into space. Triton has a thin atmosphere and a surface covered in frozen nitrogen and methane.
+                </p>
+                <p class="mission-heading">Some of the missions on Triton are :</p>
+                <button class="button-for-mission">Voyager 2 (1989) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Voyager 2</b> provided the first images and data of Triton, revealing its unique geological features. <br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./design.js"></script>
+</body>
+
+</html>

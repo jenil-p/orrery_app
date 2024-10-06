@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uranus Information</title>
+    <link rel="stylesheet" href="designbox.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <div class="background">
+        <div class="planet_hero">
+            <div class="planet_information">
+                <div class="planet-name">
+                    Uranus
+                </div>
+                <p>
+                    Uranus is the seventh planet from the Sun and is known for its striking blue color, resulting from the presence of methane in its atmosphere. It is an ice giant with a diameter of about 31,500 miles (50,700 kilometers). Uranus has a unique tilt of 98 degrees, causing it to roll along its orbit. The planet has 27 known moons, with Miranda being one of the most interesting due to its diverse geological features.
+                </p>
+                <p class="mission-heading">Some of the missions on Uranus are :</p>
+                <button class="button-for-mission">Voyager 2 (1986) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Voyager 2</b> is the only spacecraft to have flown by Uranus, providing detailed data about its atmosphere, rings, and moons. <br></p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="planet_photo">
+                <img src="uranus.webp" alt="" class="photo">
+            </div> -->
+            <div class="planet_3D" data-planet="uranus"></div>
+        </div>
+        <div class="moon_hero">
+            <div class="moon_photo">
+                <img src="./images/miranda.jpg" alt="" class="photo">
+            </div>
+            <div class="moon_information">
+                <div class="moon-name">
+                    Miranda
+                </div>
+                <p>
+                    Miranda is one of Uranus's moons and is known for its varied and complex surface, which includes large canyons, terraces, and impact craters. It has a diameter of about 235.8 kilometers (146.5 miles). The moon's unusual features suggest a history of geological activity and possible past collisions.
+                </p>
+                <p class="mission-heading">Some of the missions on Miranda are :</p>
+                <button class="button-for-mission">Voyager 2 (1986) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Voyager 2</b> provided the first close-up images of Miranda, revealing its diverse surface features. <br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./design.js"></script>
+</body>
+
+</html>

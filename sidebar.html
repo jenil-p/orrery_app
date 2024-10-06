@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="sidebar" class="sidebar">
+        <h2>Astro Object Explorer</h2>
+        <input type="text" id="search-bar" placeholder="Search...">
+        <ul id="sidebar-list">
+            <li>
+                <a href="#section1" onclick="toggleSubList(event)">Planets</a>
+                <ul class="sub-list">
+                    <li><a href="./info_from_side/mercury.html">Mercury</a></li>
+                    <li><a href="./info_from_side/venus.html">Venus</a></li>
+                    <li><a href="./info_from_side/earth.html">Earth</a></li>
+                    <li><a href="./info_from_side/mars.html">Mars</a></li>
+                    <li><a href="./info_from_side/jupiter.html">Jupiter</a></li>
+                    <li><a href="./info_from_side/saturn.html">Saturn</a></li>
+                    <li><a href="./info_from_side/uranus.html">Uranus</a></li>
+                    <li><a href="./info_from_side/naptune.html">Neptune</a></li>
+                    <li><a href="./info_from_side/pluto.html">Pluto</a></li>
+                </ul>
+            </li>
+            <!-- <li>
+                <a href="#section2" onclick="toggleSubList(event)">Asteroids</a>
+                <ul class="sub-list">
+                    <li><a href="#eros">433 Eros</a></li>
+                    <li><a href="#besixdouze">46610 Bésixdouze</a></li>
+                    <li><a href="#apophis">Apophis (99942 Apophis)</a></li>
+                    <li><a href="#da14">2012 DA14</a></li>
+                    <li><a href="#neo2020cd3">NEO 2020 CD3</a></li>
+                    <li><a href="#ryugu">162173 Ryugu</a></li>
+                    <li><a href="#ida">243 Ida</a></li>
+                    <li><a href="#fo32">1998 OR2</a></li>
+                    <li><a href="#fo32">2001 FO32</a></li>
+                </ul>
+            </li> -->
+            <!-- <li>
+                <a href="#section3" onclick="toggleSubList(event)">Comets</a>
+                <ul class="sub-list">
+                    <li><a href="#halley">Halley's Comet</a></li>
+                    <li><a href="#hale-bopp">Comet Hale-Bopp</a></li>
+                    <li><a href="#neowise">Comet NEOWISE (C/2020 F3)</a></li>
+                    <li><a href="#swift-tuttle">Comet Swift-Tuttle</a></li>
+                    <li><a href="#67p">Comet 67P/Churyumov-Gerasimenko</a></li>
+                    <li><a href="#2p">Comet 2P/Encke</a></li>
+                    <li><a href="#81p">Comet 81P/Wild</a></li>
+                    <li><a href="#8p">Comet 8P/Tuttle</a></li>
+                    <li><a href="#siding-spring">Comet C/2013 A1 (Siding Spring)</a></li>
+                </ul>
+            </li> -->
+            <!-- <li>
+                <a href="#section4" onclick="toggleSubList(event)">Space Missions</a>
+                <ul class="sub-list">
+                    <li><a href="#apollo11">Apollo 11</a></li>
+                    <li><a href="#apollo10">Apollo 10</a></li>
+                    <li><a href="#voyager1">Voyager 1</a></li>
+                    <li><a href="#curiosity">Mars Rover Curiosity</a></li>
+                    <li><a href="#hubble">Hubble Space Telescope</a></li>
+                    <li><a href="#perseverance">Mars Perseverance Rover</a></li>
+                    <li><a href="#newhorizons">New Horizons</a></li>
+                    <li><a href="#iss">International Space Station (ISS)</a></li>
+                    <li><a href="#chandrayaan1">Chandrayaan-1</a></li>
+                    <li><a href="#chandrayaan2">Chandrayaan-2</a></li>
+                    <li><a href="#chandrayaan3">Chandrayaan-3</a></li>
+                    <li><a href="#cassini">Cassini-Huygens</a></li>
+                    <li><a href="#jwst">James Webb Space Telescope (JWST)</a></li>
+                </ul>
+            </li> -->
+        </ul>
+    </div>
+    <div id="sidebar-btn" class="sidebar-btn" onclick="toggleSidebarAndIcon()" style="position: absolute; left: 0;">
+        <svg id="icon-expand-side" width="30" height="30" viewBox="0 0 30 30" style="display: block;" x="276" y="323">
+            <path fill="#252527" opacity="0.6" d="M0 3v24c0 1.657 1.343 3 3 3h24c1.657 0 3-1.343 3-3v-24c0-1.657-1.343-3-3-3h-24c-1.657 0-3 1.343-3 3z"></path>
+            <path fill="#fff" opacity="0.4" d="M15.121 19.135c0.34 0.34 0.891 0.34 1.23 0l4.635-4.635-4.635-4.635c-0.34-0.34-0.891-0.34-1.23 0s-0.34 0.891 0 1.23l3.404 3.404-3.404 3.404c-0.34 0.34-0.34 0.891 0 1.23z"></path>
+            <path fill="#fff" opacity="0.4" d="M9.49 19.135c0.34 0.34 0.891 0.34 1.23 0l4.635-4.635-4.635-4.635c-0.34-0.34-0.891-0.34-1.23 0s-0.34 0.891 0 1.23l3.404 3.404-3.404 3.404c-0.34 0.34-0.34 0.891 0 1.23z"></path>
+        </svg>
+
+        <svg id="icon-collapse-side" width="30" height="30" viewBox="0 0 30 30" style="display: none;" x="0" y="369">
+            <path fill="#252527" opacity="0.6" d="M30 3v24c0 1.657-1.343 3-3 3h-24c-1.657 0-3-1.343-3-3v-24c0-1.657 1.343-3 3-3h24c1.657 0 3 1.343 3 3z"></path>
+            <path fill="#fff" opacity="0.4" d="M14.879 19.135c-0.34 0.34-0.891 0.34-1.23 0l-4.635-4.635 4.635-4.635c0.34-0.34 0.891-0.34 1.23 0s0.34 0.891 0 1.23l-3.404 3.404 3.404 3.404c0.34 0.34 0.34 0.891 0 1.23z"></path>
+            <path fill="#fff" opacity="0.4" d="M20.51 19.135c-0.34 0.34-0.891 0.34-1.23 0l-4.635-4.635 4.635-4.635c0.34-0.34 0.891-0.34 1.23 0s0.34 0.891 0 1.23l-3.404 3.404 3.404 3.404c0.34 0.34 0.34 0.891 0 1.23z"></path>
+        </svg>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

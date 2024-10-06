@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+    #planetDetailsBox #planetName {
+      font-family: "Rubik", sans-serif;
+      font-size: 40px;
+      font-weight: 500;
+      background-color: transparent;
+      font-style: normal;
+      color: white;
+    }
+
+    #planetDetailsBox #planetInfo {
+      font-family: "Rubik", sans-serif;
+      font-size: small;
+      background-color: transparent;
+      font-weight: 400;
+      font-style: normal;
+      color: white;
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    canvas {
+      display: block;
+    }
+
+   
+
+    #outButton {
+      position: absolute;
+      top: 5%;
+      left: 90%;
+      transform: translate(-50%, -50%);
+      padding: 10px 20px;
+      font-size: 20px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+      border: none;
+      cursor: pointer;
+      display: none;
+    }
+
+    #outButton:hover {
+      background-color: #030202;
+      color: white;
+    }
+
+    .details-box {
+      position: absolute;
+      height: 750px;
+      width: 350px;
+      right: -440px;
+      /* Initially hidden offscreen */
+      top: 100px;
+      background: linear-gradient(to bottom, #404040bf, #4343439f, #4f4f4f16);
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(21, 21, 21, 0.084);
+      transition: right 0.3s;
+      z-index: 10;
+      padding: 20px;
+    }
+
+    .details-box #closeButton {
+      background-color: transparent;
+      background: none;
+      cursor: pointer;
+    }
+
+    .details-box .planetImage {
+      width: 100%;
+      height: 200px;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0 20px 0;
+    }
+
+    .details-box .planetImage img {
+      width: 100%;
+      height: 150px;
+      border-radius: 10px;
+    }
+
+    .open {
+      right: 20px;/* Slide in when opened */
+    }
+
+    
+    #planetDetails {
+    font-size: 14px; /* Consistent font size */
+    color:white; 
+    background-color: transparent;
+   
+}
+#planetDetails ul{
+    font-size: 14px; /* Consistent font size */
+    color:white; 
+    background-color: transparent;
+   
+}
+    .button {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      /* background-color: rgba(255, 255, 255, 0.3); */
+      border: 2px solid white;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    strong{
+      background-color: transparent;
+    }
+    #realtime ,#startButton {
+      width: 160px;
+      height: 50px;
+      background-color: transparent;
+      color: white;
+      background-color: rgba(128, 128, 128, 0.265);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+  }
+  #realtime:hover , #startButton:hover{
+      background-color:rgba(128, 128, 128, 0.4);
+      color: white;
+    }
+  #real{
+    display: flex;align-items: center;
+    justify-content: center;
+
+  }
+  /* #planet-details{
+    background-color: transparent;
+    color: white;
+
+  } */
+  #planetDetail a{
+    background-color: transparent;
+    color:white;
+    text-decoration: none;
+  }
+
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <div class="circle-control">
+      <div class="button up" id="moveUp"></div>
+      <div class="button left" id="moveLeft"></div>
+      <div class="button down" id="moveDown"></div>
+      <div class="button right" id="moveRight"></div>
+      <div class="button center"></div>
+    </div>
+  </div>
+
+  <div id="planetDetailsBox" class="details-box">
+    <button id="closeButton" style="float: right;">
+      <svg id="icon-expand-side" width="30" height="30" viewBox="0 0 30 30" style="display: block;" x="276" y="323">
+        <path fill="#252527" opacity="0.6"
+          d="M0 3v24c0 1.657 1.343 3 3 3h24c1.657 0 3-1.343 3-3v-24c0-1.657-1.343-3-3-3h-24c-1.657 0-3 1.343-3 3z">
+        </path>
+        <path fill="#fff" opacity="0.4"
+          d="M15.121 19.135c0.34 0.34 0.891 0.34 1.23 0l4.635-4.635-4.635-4.635c-0.34-0.34-0.891-0.34-1.23 0s-0.34 0.891 0 1.23l3.404 3.404-3.404 3.404c-0.34 0.34-0.34 0.891 0 1.23z">
+        </path>
+        <path fill="#fff" opacity="0.4"
+          d="M9.49 19.135c0.34 0.34 0.891 0.34 1.23 0l4.635-4.635-4.635-4.635c-0.34-0.34-0.891-0.34-1.23 0s-0.34 0.891 0 1.23l3.404 3.404-3.404 3.404c-0.34 0.34-0.34 0.891 0 1.23z">
+        </path>
+      </svg>
+    </button>
+    <h3 id="planetName"></h3>
+    <div class="planetImage">
+      <img id="planetImage" src="" alt="Planet Image">
+    </div>
+    <!-- <div id="planetInfo"></div> -->
+    <div id="planetDetails"></div>
+     
+  </div>
+  
+ 
+  <div class="logo-of-nasa">
+    <img src="assets/nasa_logo.svg" alt="">
+</div>
+<div id="planet-details">
+  <!-- Planet details will be injected here -->
+</div>
+<div id="real">
+  <button id="realtime">Near earth Object</button>
+</div>
+<!-- Sidebar will be dynamically loaded here -->
+<div id="sidebar-container"></div>
+  <button id="startButton">Start Game</button>
+  <button id="outButton">Out of Game</button>
+  <canvas id="draw"></canvas>
+  <Script type="module" src="main.js"></Script>
+  <Script  src="script.js"></Script>
+  <script>
+      document.getElementById('realtime').onclick = function() {
+            window.location.href = "real_time.html"; // Replace with the actual URL of the page
+        };
+  </script>
+
+</body>
+</html>

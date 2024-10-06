@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Innformation</title>
+    <link rel="stylesheet" href="designbox.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <div class="background">
+        <div class="planet_hero">
+            <div class="planet_information">
+                <div class="planet-name">
+                    Earth
+                </div>
+                <p>
+                    Earth—our home planet—is the only place we know of so far that’s inhabited by living things. It's
+                    also the only planet in our solar system with liquid water on the surface. <br>
+                    Earth is only the fifth largest planet in the solar system, just slightly larger than nearby Venus.
+                    <br>
+                    NASA has the most missions of all operating on our home planet. <br> <br>
+                </p>
+                <p class="mission-heading">Some of the missions on Earth are :</p>
+                <button class="button-for-mission" >Apollo Missions (1969–1972) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p> <b style="background-color: transparent;">Apollo Missions </b> were a series of human spaceflight missions conducted by NASA between 1961 and 1972. These missions aimed to land astronauts on the Moon and return them safely to Earth. The Apollo program was a crucial part of the Space Race between the United States and the Soviet Union during the Cold War. <br>
+                        </p>
+                    </div>
+                </div>
+                <button class="button-for-mission" >INSAT (1982–present) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p> <b style="background-color: transparent;">INSAT </b> stands for Indian National Satellite. It is a series of communication satellites launched by the Indian Space Research Organisation (ISRO). These satellites are used for various applications such as telecommunications, broadcasting, meteorology, and scientific research. The INSAT series has played a significant role in India's space capabilities and has contributed to the country's communication infrastructure. <br>
+                        </p>
+                    </div>
+                </div>
+                <button class="button-for-mission">International Space Station (1998–present) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p> <b style="background-color: transparent;">International Space Station (ISS) </b> is a modular space station in low Earth orbit that has been continuously inhabited since 1998. It is a joint project between multiple space agencies, including NASA (United States), Roscosmos (Russia), JAXA (Japan), ESA (European Space Agency), and CSA (Canadian Space Agency). The station serves as a platform for scientific research, technology development, and international cooperation in space exploration. It has been used for various experiments in areas such as human biology, materials science, physics, and Earth observation. The ISS is a symbol of international collaboration in space technology and has contributed significantly to our understanding of the universe and Earth's environment. <br>
+                    </div>
+                </div>
+                <button class="button-for-mission" >Landsat Program (1972–present) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p> <b style="background-color: transparent;">Landsat Program </b> is a series of Earth observation satellites launched by NASA since 1972. These satellites are designed to monitor the Earth's land surface, providing data for various applications such as agriculture, forestry, water resources management, and urban planning. The Landsat program has been instrumental in understanding the Earth's environment, monitoring changes in land use, and supporting scientific research. It has contributed to global environmental monitoring and has been crucial for disaster response and management. The Landsat satellites continue to operate, providing valuable data for scientific and practical purposes, and have become a cornerstone of Earth observation missions. <br>
+                    </div>
+                </div>
+            </div>
+            <div class="planet_3D" data-planet="earth"></div>
+        </div>
+        <div class="moon_hero">
+            <div class="moon_3D" data-moon="moon"></div>
+            <div class="moon_information">
+                <div class="moon-name">
+                    Moon
+                </div>
+                <p>
+                    Earth's Moon is the only place beyond Earth where humans have set foot. <br>
+                    The brightest and largest object in our night sky, the Moon makes Earth a more livable planet by
+                    moderating our home planet's wobble on its axis, leading to a relatively stable climate. It also
+                    causes tides, creating a rhythm that has guided humans for thousands of years. <br>
+                    Our moon is the fifth largest of the 190+ moons orbiting planets in our solar system. <br> <br>
+                </p>
+                <p class="mission-heading" >Some of the missions on Moon are :</p>
+                
+                <button class="button-for-mission" id="toggleButton">Chandrayaan-3 (2023) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p> <b style="background-color: transparent;">Chandrayaan-3 </b>, Chandrayaan-3 is India's third lunar exploration mission, launched by the Indian Space Research Organisation (ISRO) on July 14, 2023. Building on the successes of its predecessors, Chandrayaan-3 aims to achieve a soft landing on the Moon's surface, specifically in the southern polar region. The mission includes a lander named Vikram and a rover called Pragyan, designed to conduct scientific experiments and explore the lunar terrain. On August 23, 2023, Vikram successfully landed on the Moon, making India the first country to reach the lunar south pole, a region of significant interest due to its potential water ice deposits and unique geological features. <br>
+                        </p>
+                    </div>
+                </div>
+
+
+                <button class="button-for-mission">Apollo 11 (1969) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p> <b style="background-color: transparent;">Apollo 11 </b> was a landmark mission in human space exploration and the first successful crewed mission to land on the Moon. Launched on July 16, 1969, it carried astronauts Neil Armstrong, Buzz Aldrin, and Michael Collins. On July 20, 1969, Armstrong and Aldrin landed the lunar module, Eagle, on the Sea of Tranquility, while Collins orbited above in the command module, Columbia. Armstrong became the first human to step onto the lunar surface, famously declaring, “That's one small step for [a] man, one giant leap for mankind.” The astronauts spent about 21 hours on the lunar surface, conducting experiments, collecting samples, and taking photographs before returning to Earth. Apollo 11 safely landed back on Earth on July 24, 1969, marking a significant achievement in space exploration and a major milestone in the Space Race. <br>
+                        </p>
+                    </div>
+                </div>
+                <button class="button-for-mission">Lunar Reconnaissance Orbiter (LRO) (2009–Present):</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p> <b style="background-color: transparent;">Lunar Reconnaissance Orbiter (LRO) </b> is a robotic spacecraft launched by NASA on June 18, 2009, designed to map the Moon's surface in high resolution. Equipped with a suite of scientific instruments, LRO aims to gather data to help scientists understand the Moon's geology, topography, and resources. The spacecraft orbits the Moon at an altitude of about 50 kilometers (31 miles) and has provided stunning images that reveal the Moon's surface features, including landing sites of past missions and potential locations for future exploration. LRO has contributed to various scientific studies, such as analyzing the lunar poles for water ice deposits, studying the Moon's history and evolution, and supporting future crewed missions by identifying safe landing sites. The mission has greatly enhanced our understanding of the Moon and continues to operate as a vital resource for lunar research.<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./design.js"></script>
+
+    <!-- <script src="planet_3D.js"></script> -->
+</body>
+
+</html>

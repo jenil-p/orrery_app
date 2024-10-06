@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saturn Information</title>
+    <link rel="stylesheet" href="designbox.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <div class="background">
+        <div class="planet_hero">
+            <div class="planet_information">
+                <div class="planet-name">
+                    Saturn
+                </div>
+                <p>
+                    Saturn is the sixth planet from the Sun and is renowned for its spectacular ring system, made up of
+                    ice and rock particles. It is a gas giant, primarily composed of hydrogen and helium, with a
+                    diameter of about 75,000 miles (120,000 kilometers). Saturn has a unique atmosphere characterized by
+                    strong winds and storms. The planet boasts 82 known moons, with Titan being the most significant,
+                    featuring a dense atmosphere and lakes of liquid methane.
+                </p>
+                <p class="mission-heading">Some of the missions on Saturn are :</p>
+                <button class="button-for-mission">Pioneer 11 (1979) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Pioneer 11</b> was the first spacecraft to fly by
+                            Saturn, providing invaluable data about the planet's atmosphere, magnetic field, and ring
+                            system. <br></p>
+                    </div>
+                </div>
+                <button class="button-for-mission">Voyager 1 (1980) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Voyager 1</b> provided detailed images and data on
+                            Saturn's rings and moons. <br></p>
+                    </div>
+                </div>
+                <button class="button-for-mission">Cassini-Huygens (2004–2017) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Cassini-Huygens</b> studied Saturn and its moons
+                            for over 13 years, revealing extensive information about the planet and sending the Huygens
+                            probe to Titan. <br></p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="planet_photo">
+                <img src="saturn.webp" alt="" class="photo">
+            </div> -->
+            <div class="planet_3D" data-planet="saturn"></div>
+        </div>
+        <div class="moon_hero">
+            <!-- <div class="moon_photo" >
+                <img src="titan.jpg" alt="" class="photo">
+            </div> -->
+            <div class="moon_3D" data-moon="titan"></div>
+            <div class="moon_information">
+                <div class="moon-name">
+                    Titan
+                </div>
+                <p>
+                    Titan is Saturn's largest moon and the second-largest moon in the solar system. It has a thick
+                    atmosphere, primarily composed of nitrogen, and features rivers and lakes of liquid methane and
+                    ethane on its surface. Titan is unique in that it is the only moon in the solar system with a dense
+                    atmosphere, making it a target for scientific study.
+                </p>
+                <p class="mission-heading">Some of the missions on Titan are :</p>
+                <button class="button-for-mission">Huygens Probe (2005) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Huygens</b> successfully landed on Titan in January
+                            2005, providing the first direct measurements of its atmosphere and surface. <br></p>
+                    </div>
+                </div>
+                <button class="button-for-mission">Dragonfly (Future Mission) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Dragonfly</b> is a planned NASA mission that will
+                            send a rotorcraft lander to Titan to explore its surface and assess its habitability. <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./design.js"></script>
+    <script>
+
+        // Function to load Saturn in the planet_3D class
+        function loadSaturn3D(className) {
+            const planetContainer = document.querySelector(`.${className}`);
+
+            if (!planetContainer) return;
+
+            // Set up scene, camera, and renderer
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, planetContainer.clientWidth / planetContainer.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true });
+            renderer.setSize(planetContainer.clientWidth, planetContainer.clientHeight);
+            planetContainer.appendChild(renderer.domElement);
+
+            // Create Saturn (sphere)
+            const textureLoader = new THREE.TextureLoader();
+            const saturnTexture = textureLoader.load('./textures/saturn.jpg'); // Load Saturn's texture
+            const saturnGeometry = new THREE.SphereGeometry(5, 32, 32); // Saturn radius = 5
+            const saturnMaterial = new THREE.MeshStandardMaterial({ map: saturnTexture });
+            const saturn = new THREE.Mesh(saturnGeometry, saturnMaterial);
+            scene.add(saturn);
+
+            // Create Saturn's rings
+            const ringTexture = textureLoader.load('./textures/saturn-ring.png'); // Transparent ring texture
+            const ringGeometry = new THREE.RingGeometry(6.5, 10, 64); // Inner radius 6, outer radius 10
+            const ringMaterial = new THREE.MeshBasicMaterial({
+                map: ringTexture,
+                side: THREE.DoubleSide,
+                transparent: true // Enable transparency for ring gaps
+            });
+            const saturnRings = new THREE.Mesh(ringGeometry, ringMaterial);
+
+            // Rotate the rings to align them horizontally (Saturn's tilt)
+            saturnRings.rotation.x = Math.PI / 2; // Lying flat on x-axis
+            saturn.add(saturnRings); // Attach the rings to Saturn
+
+            // Lighting
+            const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+            pointLight.position.set(10, 10, 10);
+            scene.add(pointLight);
+
+            // Set camera position
+            camera.position.z = 20;
+
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+
+                // Rotation of Saturn and rings
+                saturn.rotation.y += 0.002;
+
+                // Render the scene
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // Adjust canvas size on window resize
+            window.addEventListener('resize', () => {
+                const width = planetContainer.clientWidth;
+                const height = planetContainer.clientHeight;
+                renderer.setSize(width, height);
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+            });
+        }
+
+        // Call the function to load the Saturn model in the class 'planet_3D'
+        loadSaturn3D('planet_3D');
+
+    </script>
+</body>
+
+</html>

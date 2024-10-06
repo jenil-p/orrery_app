@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Information</title>
+    <link rel="stylesheet" href="designbox.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+</head>
+
+<body>
+    <div class="background">
+        <div class="planet_hero">
+            <div class="planet_information">
+                <div class="planet-name">
+                    Mars
+                </div>
+                <p>
+                    Mars is the fourth planet from the Sun and is often referred to as the "Red Planet" due to its
+                    reddish appearance, which is a result of iron oxide (rust) on its surface. It is about half the size
+                    of Earth and has a thin atmosphere, composed mainly of carbon dioxide. Mars features the largest
+                    volcano in the solar system, Olympus Mons, which is nearly three times the height of Mount Everest.
+                    Additionally, it has a large canyon system known as Valles Marineris, which is over 2,500 miles
+                    (4,000 kilometers) long.
+                    <br>
+                    Mars has two small moons, Phobos and Deimos, which are thought to be captured asteroids. The planet
+                    has polar ice caps made of water and dry ice (frozen carbon dioxide) that change with the seasons.
+                    Mars has been a major target for exploration, with various missions sending rovers and landers to
+                    study its geology, climate, and potential for past life.
+                </p>
+                <p class="mission-heading">Some of the missions on Mars are :</p>
+                <button class="button-for-mission">Mars Rover Perseverance (2020–present) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Perseverance</b> is a car-sized rover that landed
+                            on Mars in February 2021 as part of NASA's Mars 2020 mission. Its main goal is to search for
+                            signs of ancient life and collect rock and soil samples for potential return to Earth.
+                            Perseverance also carries the Ingenuity helicopter, which has performed the first powered
+                            flights on another planet, testing new technologies for future aerial exploration. <br>
+                        </p>
+                    </div>
+                </div>
+                <button class="button-for-mission">Curiosity Rover (2012–present) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Curiosity</b> is a car-sized rover that has been
+                            exploring Mars since its landing in August 2012. It is equipped with a variety of scientific
+                            instruments to analyze the planet's surface and atmosphere. Curiosity's mission is to assess
+                            whether Mars ever had the conditions to support microbial life and to study the planet's
+                            climate and geology. <br>
+                        </p>
+                    </div>
+                </div>
+                <button class="button-for-mission">Mars Orbiter Mission (Mangalyaan) (2013–present) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Mangalyaan</b>, India's first interplanetary
+                            mission, was launched by the Indian Space Research Organisation (ISRO) in November 2013 and
+                            entered Mars' orbit in September 2014. The mission aims to explore the Martian surface and
+                            atmosphere, with a focus on studying methane levels and the planet's geology. <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="planet_photo">
+                <img src="mars.webp" alt="" class="photo">
+            </div> -->
+            <div class="planet_3D" data-planet="mars"></div>
+        </div>
+        <div class="moon_hero">
+            <!-- <div class="moon_photo">
+                <img src="phobo.jpg" alt="" class="photo">
+            </div> -->
+            <div class="moon_3D" data-moon="phobos"></div>
+            <div class="moon_information">
+                <div class="moon-name">
+                    Phobos
+                </div>
+                <p>
+                    Phobos is the larger and closer of Mars' two moons and is one of the smallest moons in the solar
+                    system. It orbits Mars at an extremely close distance, completing a full orbit in just 7 hours and
+                    39 minutes, making it one of the few moons that rises in the west and sets in the east. Phobos is
+                    heavily cratered and has a very irregular shape, resembling a lumpy potato. <br>
+                    Its surface is covered in dust and loose rocks, and it has a large groove system, which is thought
+                    to be caused by tidal forces from Mars. Phobos is slowly spiraling inward and is predicted to either
+                    crash into Mars or break apart, forming a ring system in the next 50 million years. <br>
+                </p>
+                <p class="mission-heading">Some of the missions on Phobos are :</p>
+
+                <button class="button-for-mission">Phobos-Grunt (2011) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Phobos-Grunt</b> was a Russian mission aimed at
+                            returning samples from Phobos, but it failed to leave Earth orbit. Despite its failure, the
+                            mission aimed to study Phobos and Mars in more detail. <br>
+                        </p>
+                    </div>
+                </div>
+                <button class="button-for-mission">Mars Sample Return (future) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Mars Sample Return</b> is a proposed mission to
+                            collect samples from Mars and return them to Earth, including potential samples from Phobos.
+                            The mission aims to bring back evidence of past life and study Martian geology directly.
+                            <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./design.js"></script>
+</body>
+
+</html>

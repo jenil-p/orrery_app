@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercury Information</title>
+    <link rel="stylesheet" href="designbox.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <div class="background">
+        <div class="planet_hero">
+            <div class="planet_information">
+                <div class="planet-name">
+                    Mercury
+                </div>
+                <p>
+                    Mercury is the closest planet to the Sun and the smallest in the solar system. It is a terrestrial planet with a rocky surface and has no atmosphere to speak of, resulting in extreme temperature fluctuations between day and night. Mercury's surface is heavily cratered, resembling the Moon. 
+                    <br>
+                    It has a very weak magnetic field and is composed mainly of iron. One of Mercury's most notable features is its large core, which accounts for a significant portion of its mass. Despite being close to the Sun, Mercury has been visited by only one spacecraft, Mariner 10, in the 1970s.
+                </p>
+                <p class="mission-heading">Some of the missions on Mercury are :</p>
+                <button class="button-for-mission">Mariner 10 (1974–1975) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Mariner 10</b> was the first spacecraft to visit Mercury, conducting three flybys and providing the first close-up images of the planet's surface. The mission helped scientists learn about Mercury's geology and atmosphere. <br>
+                        </p>
+                    </div>
+                </div>
+                <button class="button-for-mission">MESSENGER (2004–2015) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">MESSENGER</b> (MErcury Surface, Space Environment, Geochemistry, and Ranging) was the first spacecraft to orbit Mercury. It provided detailed images and data on the planet's surface, magnetic field, and geological history. <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="planet_3D" data-planet="mercury"></div>
+        </div>
+    </div>
+    <script src="./design.js"></script>
+</body>
+
+</html>

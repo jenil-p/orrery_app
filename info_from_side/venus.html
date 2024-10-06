@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venus Information</title>
+    <link rel="stylesheet" href="designbox.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <div class="background">
+        <div class="planet_hero">
+            <div class="planet_information">
+                <div class="planet-name">
+                    Venus
+                </div>
+                <p>
+                    Venus is the second planet from the Sun and is often referred to as Earth’s "sister planet" due to its similar size and composition. However, its surface is extremely hot, with average temperatures reaching around 900°F (475°C) due to a thick atmosphere rich in carbon dioxide, which creates a runaway greenhouse effect. 
+                    <br>
+                    Venus has a rocky surface with mountains, valleys, and thousands of volcanoes. It rotates very slowly on its axis, with a day longer than its year. Despite being the brightest object in the night sky after the Moon, Venus's thick clouds of sulfuric acid obscure its surface.
+                </p>
+                <p class="mission-heading">Some of the missions on Venus are :</p>
+                <button class="button-for-mission">Mariner 2 (1962) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Mariner 2</b> was the first successful mission to Venus, providing data on its atmosphere and surface temperatures during its flyby. <br>
+                        </p>
+                    </div>
+                </div>
+                <button class="button-for-mission">Venera (1961–1984) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Venera</b> was a series of Soviet missions that successfully landed on Venus and transmitted data back to Earth, providing detailed information about its surface and atmosphere. <br>
+                        </p>
+                    </div>
+                </div>
+                <button class="button-for-mission">Magellan (1989–1994) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">Magellan</b> used radar to map 98% of Venus's surface, revealing its geological features and evidence of volcanic activity. <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="planet_photo">
+                <img src="venus.webp" alt="" class="photo">
+            </div> -->
+            <div class="planet_3D" data-planet="venus"></div>
+        </div>
+    </div>
+    <script src="./design.js"></script>
+</body>
+
+</html>

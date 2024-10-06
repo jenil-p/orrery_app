@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pluto Information</title>
+    <link rel="stylesheet" href="designbox.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <div class="background">
+        <div class="planet_hero">
+            <div class="planet_information">
+                <div class="planet-name">
+                    Pluto
+                </div>
+                <p>
+                    Pluto, once considered the ninth planet of the solar system, is now classified as a dwarf planet. It has a diameter of about 1,430 miles (2,302 kilometers) and is primarily composed of ice and rock. Pluto has a thin atmosphere that expands as it gets closer to the Sun. It has five known moons, with Charon being the largest, sharing a unique relationship with Pluto.
+                </p>
+                <p class="mission-heading">Some of the missions on Pluto are :</p>
+                <button class="button-for-mission">New Horizons (2015) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">New Horizons</b> was the first spacecraft to fly by Pluto, providing stunning images and data about its surface, atmosphere, and moons. <br></p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="planet_photo">
+                <img src="pluto.webp" alt="" class="photo">
+            </div> -->
+            <div class="planet_3D" data-planet="pluto"></div>
+        </div>
+        <div class="moon_hero">
+            <!-- <div class="moon_photo">
+                <img src="charon.jpg" alt="" class="photo">
+            </div> -->
+            <div class="moon_3D" data-moon="charon"></div>
+            <div class="moon_information">
+                <div class="moon-name">
+                    Charon
+                </div>
+                <p>
+                    Charon is Pluto's largest moon, and it is almost half the size of Pluto itself, leading to a unique binary system. The two bodies are tidally locked, meaning the same side of Charon always faces Pluto. Charon has a dark polar cap and is believed to have a young surface, indicating possible geological activity.
+                </p>
+                <p class="mission-heading">Some of the missions on Charon are :</p>
+                <button class="button-for-mission">New Horizons (2015) :</button>
+                <div class="mission-information" id="toggleContent">
+                    <div class="information-about-mission">
+                        <p><b style="background-color: transparent;">New Horizons</b> provided detailed images and data about Charon's surface and its geological features. <br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./design.js"></script>
+</body>
+
+</html>

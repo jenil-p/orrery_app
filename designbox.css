@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+.background{
+    background-image: url(./images/back.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat:repeat-y;
+}
+.planet_hero{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    gap: 20px;
+    background-color: transparent;
+}
+ .planet_hero .planet_information{
+    background-color: rgba(58, 57, 59, 0.328);
+    background: linear-gradient(to bottom, #404040bf, #4343439f, #4f4f4f16);
+    height: 60%;
+    width: 40%;
+    border-radius: 10px;
+    padding: 20px;
+}
+.planet_hero .planet_information .planet-name{
+    font-family: "Rubik", sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 20px;
+    font-style: normal;
+    background-color: transparent;
+    color: white;
+}
+.planet_hero .planet_information p{
+    font-family: "Rubik", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    background-color: transparent;
+    color: white;
+    text-align: left;
+    justify-content: center;
+}
+.planet_hero .planet_photo{
+    height: 80%;
+    width: 40%;
+    border-radius: 10px;
+    background-color: transparent;
+}
+.planet_hero .planet_photo img{
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-color: transparent;
+}
+ .planet_hero .planet_photo canvas{
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
+ .moon_hero{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    gap: 20px;
+    background-color: transparent;
+}
+ .moon_hero .moon_information{
+    /* background-color: rgba(58, 57, 59, 0.328); */
+    background: linear-gradient(to bottom, #404040bf, #4343439f, #4f4f4f16);
+    height: 60%;
+    width: 40%;
+    border-radius: 10px;
+    padding: 20px;
+}
+.moon_hero .moon_information .moon-name{
+    font-family: "Rubik", sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 20px;
+    font-style: normal;
+    background-color: transparent;
+    color: white;
+}
+.moon_hero .moon_information p{
+    font-family: "Rubik", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    background-color: transparent;
+    color: white;
+    text-align: left;
+    justify-content: center;
+}
+.moon_hero .moon_photo{
+    height: 80%;
+    width: 40%;
+    border-radius: 10px;
+    background-color: transparent;
+}
+.moon_hero .moon_photo img{
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-color: transparent;
+}
+.planet_hero .planet_photo canvas{
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
